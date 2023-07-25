@@ -1,10 +1,14 @@
-import { View, Text } from 'react-native';
+import { Text } from 'react-native';
+
+import Input from '../../../components/input/Input';
+import { ContainerLogin } from '../styles/login.style';
 
 const Login = () => {
   return (
-    <View>
+    <ContainerLogin>
       <Text>Login</Text>
-    </View>
+      <Input placeholder="Digite algo" />
+    </ContainerLogin>
   );
 };
 

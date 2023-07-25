@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import {
-  View,
-  TextInput,
-  StyleSheet,
   NativeSyntheticEvent,
+  StyleSheet,
+  TextInput,
   TextInputChangeEventData,
+  View,
 } from 'react-native';
 
 const Example = () => {
