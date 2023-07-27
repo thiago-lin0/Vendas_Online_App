@@ -10,16 +10,59 @@ interface TextProps extends TextPropsNative {
 }
 
 const Text = ({ color, types, ...props }: TextProps) => {
-  const handleFontSize = useMemo(() => {
+  const fontSize = useMemo(() => {
     switch (types) {
-      case textTypes.TITLE:
-        return '32px';
+      case textTypes.TITLE_REGULAR:
+      case textTypes.TITLE_BOLD:
+      case textTypes.TITLE_LIGHT:
+        return '24px';
+      case textTypes.SUB_TITLE_REGULAR:
+      case textTypes.SUB_TITLE_BOLD:
+      case textTypes.SUB_TITLE_LIGHT:
+        return '20px';
+      case textTypes.BUTTON_BOLD:
+      case textTypes.BUTTON_REGULAR:
+      case textTypes.BUTTON_LIGHT:
+        return '18px';
+      case textTypes.PARAGRAPH_REGULAR:
+      case textTypes.PARAGRAPH_LIGHT:
+      case textTypes.PARAGRAPH_BOLD:
+        return '14px';
+      case textTypes.PARAGRAPH_SMALL_REGULAR:
+      case textTypes.PARAGRAPH_SMALL_LIGHT:
+      case textTypes.PARAGRAPH_SMALL_BOLD:
+        return '10px';
       default:
-        return '16px';
+        return '14px';
     }
   }, [types]);
 
-  return <TextContainer fontSize={handleFontSize} color={color} {...props} />;
+  const fontFamily = useMemo(() => {
+    switch (types) {
+      case textTypes.TITLE_BOLD:
+      case textTypes.SUB_TITLE_BOLD:
+      case textTypes.PARAGRAPH_BOLD:
+      case textTypes.PARAGRAPH_SMALL_BOLD:
+      case textTypes.BUTTON_BOLD:
+        return 'Poppins-Bold';
+      case textTypes.SUB_TITLE_REGULAR:
+      case textTypes.TITLE_REGULAR:
+      case textTypes.PARAGRAPH_REGULAR:
+      case textTypes.PARAGRAPH_SMALL_REGULAR:
+      case textTypes.BUTTON_REGULAR:
+        return 'Poppins-Regular';
+      case textTypes.TITLE_LIGHT:
+      case textTypes.SUB_TITLE_LIGHT:
+      case textTypes.PARAGRAPH_LIGHT:
+      case textTypes.PARAGRAPH_SMALL_LIGHT:
+      case textTypes.BUTTON_LIGHT:
+        return 'Poppins-Light';
+      default:
+        return 'Poppins-Regular';
+    }
+  }, [types]);
+
+  return <TextContainer fontFamily={fontFamily} fontSize={fontSize} color={color} {...props} />;
 };
 
 export default Text;

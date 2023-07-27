@@ -10,7 +10,7 @@ const Login = () => {
   return (
     <View>
       <ContainerLogin>
-        <Text types={textTypes.TITLE}>Login</Text>
+        <Text types={textTypes.TITLE_BOLD}>Login</Text>
         <Input placeholder="Digite algo" />
         <Button margin="16px" title="ENTRAR" />
       </ContainerLogin>
