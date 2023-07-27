@@ -1,5 +1,6 @@
 export const grayThemes = {
   gray80: '#B1BBC2',
+  gray100: '#929898',
 };
 
 export const neutralThemes = {

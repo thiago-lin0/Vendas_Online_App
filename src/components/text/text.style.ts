@@ -10,4 +10,5 @@ export const TextContainer = styled.Text<TextContainerProps>`
   ${(props: TextContainerProps) => (props.color ? `color: ${props.color}` : '')};
   font-size: ${(props: TextContainerProps) => props.fontSize};
   font-family: ${(props: TextContainerProps) => props.fontFamily};
+  padding-top: 3px;
 `;

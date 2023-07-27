@@ -30,3 +30,7 @@ export const GradientButton = styled(LinearGradient)<ContainerButtonProps>`
   justify-content: center;
   ${(props: ContainerButtonProps) => (props.margin ? `margin: ${props.margin}` : '')};
 `;
+
+export const ButtonDisabled = styled(ContainerButton)<ContainerButtonProps>`
+  background-color: ${theme.colors.grayThemes.gray80};
+`;

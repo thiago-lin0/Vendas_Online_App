@@ -8,12 +8,20 @@ import { theme } from '../../../themes/theme';
 import { ContainerLogin } from '../styles/login.style';
 
 const Login = () => {
+  const handleClcik = () => {
+    console.log('clicou');
+  };
   return (
     <View>
       <ContainerLogin>
         <Text types={textTypes.TITLE_BOLD}>Login</Text>
         <Input placeholder="Digite algo" />
-        <Button type={theme.buttons.buttonsTheme.primary} margin="16px" title="ENTRAR" />
+        <Button
+          type={theme.buttons.buttonsTheme.primary}
+          margin="16px"
+          title="ENTRAR"
+          onPress={handleClcik}
+        />
       </ContainerLogin>
     </View>
   );
