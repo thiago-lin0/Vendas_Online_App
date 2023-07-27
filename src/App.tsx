@@ -9,6 +9,7 @@ const App = () => {
     'Poppins-Italic': require('./assets/fonts/Poppins-Italic.ttf'),
     'Poppins-Light': require('./assets/fonts/Poppins-Light.ttf'),
     'Poppins-Bold': require('./assets/fonts/Poppins-Bold.ttf'),
+    'Poppins-SemiBold': require('./assets/fonts/Poppins-SemiBold.ttf'),
   });
 
   if (!fontsLoaded) {

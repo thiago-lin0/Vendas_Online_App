@@ -1,4 +1,4 @@
-import { TouchableOpacityProps, ActivityIndicator } from 'react-native';
+import { ActivityIndicator, TouchableOpacityProps } from 'react-native';
 
 import { theme } from '../../themes/theme';
 import Text from '../text/Text';
@@ -31,7 +31,7 @@ const Button = ({ title, type, loading, disabled, onPress, margin, ...props }: B
         {loading ? (
           <ActivityIndicator size={'large'} color={'white'} />
         ) : (
-          <Text types={textTypes.BUTTON_BOLD} color={color}>
+          <Text types={textTypes.BUTTON_SEMIBOLD} color={color}>
             {title}
           </Text>
         )}
