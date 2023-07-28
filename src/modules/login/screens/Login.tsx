@@ -6,7 +6,6 @@ import Text from '../../../components/text/Text';
 import { textTypes } from '../../../components/text/textTypes';
 import { theme } from '../../../themes/theme';
 import { ContainerLogin } from '../styles/login.style';
-import Icon from '@expo/vector-icons/MaterialCommunityIcons';
 
 const Login = () => {
   const handleClcik = () => {
@@ -15,11 +14,17 @@ const Login = () => {
   return (
     <View>
       <ContainerLogin>
-        <Icon name="home" />
         <Text types={textTypes.TITLE_BOLD}>Login</Text>
         <Input
           title={'E-mail :'}
           placeholder="Digite seu email"
+          cursorColor={theme.colors.purpleTheme.purple80}
+          margin={'0px 0px 10px 0px'}
+        />
+        <Input
+          secureTextEntry
+          title={'Senha :'}
+          placeholder="Digite sua senha"
           cursorColor={theme.colors.purpleTheme.purple80}
         />
         <Button
