@@ -1,5 +1,5 @@
-import { TextInputProps, View } from 'react-native';
 import { useState } from 'react';
+import { TextInputProps, View } from 'react-native';
 
 import { theme } from '../../themes/theme';
 import { DisplayFlexColumn } from '../globalStyles/globalView.style';

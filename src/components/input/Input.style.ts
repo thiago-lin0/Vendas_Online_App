@@ -1,5 +1,5 @@
-import styled from 'styled-components/native';
 import Icon from '@expo/vector-icons/MaterialCommunityIcons';
+import styled from 'styled-components/native';
 
 import { theme } from '../../themes/theme';
 
