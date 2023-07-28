@@ -17,3 +17,7 @@ export const purpleTheme = {
 export const pinkTheme = {
   pink80: '#C833DB',
 };
+
+export const errorTheme = {
+  red80: '#E7774D',
+};
