@@ -1,5 +1,6 @@
-import { MethodEnum } from '../assets/enums/Method.enum';
 import axios from 'axios';
+
+import { MethodEnum } from '../assets/enums/Method.enum';
 
 export type MethodType = 'get' | 'post' | 'put' | 'patch' | 'delete';
 

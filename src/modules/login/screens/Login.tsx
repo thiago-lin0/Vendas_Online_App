@@ -4,14 +4,21 @@ import { View } from 'react-native';
 import Button from '../../../components/button/Buttos';
 import Input from '../../../components/input/Input';
 import { theme } from '../../../themes/theme';
-import { UseLogin } from '../hook/UseLogin';
 import { ContainerLogin, ImageLogo } from '../styles/login.style';
+import { UseLogin } from '../hook/UseLogin';
 // import Modal from '../../../components/modal/Modal';
 
 const Login = () => {
   // const [modalVisible, setModalVisible] = useState(false);
-  const { email, password, error, loading, handleClcik, handleClickEmail, handleClickPassWord } =
-    UseLogin();
+  const {
+    email,
+    password,
+    errorMessage,
+    loading,
+    handleClcik,
+    handleClickEmail,
+    handleClickPassWord,
+  } = UseLogin();
 
   return (
     <View>
@@ -33,7 +40,7 @@ const Login = () => {
           placeholder="Digite seu email"
           cursorColor={theme.colors.purpleTheme.purple80}
           margin={'0px 0px 10px 0px'}
-          errorMessage={error}
+          errorMessage={errorMessage}
           onChange={handleClickEmail}
         />
         <Input
@@ -42,7 +49,7 @@ const Login = () => {
           title={'Senha :'}
           placeholder="Digite sua senha"
           cursorColor={theme.colors.purpleTheme.purple80}
-          errorMessage={error}
+          errorMessage={errorMessage}
           onChange={handleClickPassWord}
         />
         <Button
