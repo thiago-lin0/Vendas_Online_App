@@ -4,8 +4,8 @@ import { View } from 'react-native';
 import Button from '../../../components/button/Buttos';
 import Input from '../../../components/input/Input';
 import { theme } from '../../../themes/theme';
-import { ContainerLogin, ImageLogo } from '../styles/login.style';
 import { UseLogin } from '../hook/UseLogin';
+import { ContainerLogin, ImageLogo } from '../styles/login.style';
 // import Modal from '../../../components/modal/Modal';
 
 const Login = () => {
