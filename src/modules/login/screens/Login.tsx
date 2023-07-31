@@ -9,9 +9,8 @@ import { ContainerLogin, ImageLogo } from '../styles/login.style';
 
 const Login = () => {
   // const [modalVisible, setModalVisible] = useState(false);
-  const handleClcik = () => {
+  const handleClcik = async () => {
     console.log('clicou');
-    // setModalVisible(true);
   };
   return (
     <View>
