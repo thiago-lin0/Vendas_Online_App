@@ -3,10 +3,8 @@ import { View } from 'react-native';
 
 import Button from '../../../components/button/Buttos';
 import Input from '../../../components/input/Input';
-import Text from '../../../components/text/Text';
-import { textTypes } from '../../../components/text/textTypes';
 import { theme } from '../../../themes/theme';
-import { ContainerLogin } from '../styles/login.style';
+import { ContainerLogin, ImageLogo } from '../styles/login.style';
 // import Modal from '../../../components/modal/Modal';
 
 const Login = () => {
@@ -24,7 +22,11 @@ const Login = () => {
         text="teste text"
       /> */}
       <ContainerLogin>
-        <Text types={textTypes.TITLE_BOLD}>Login</Text>
+        <ImageLogo
+          source={require('../../../assets/images/logo.png')}
+          alt={'Logo KO?'}
+          resizeMode={'center'}
+        />
         <Input
           title={'E-mail :'}
           placeholder="Digite seu email"
