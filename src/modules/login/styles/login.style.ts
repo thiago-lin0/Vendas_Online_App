@@ -12,8 +12,6 @@ export const ContainerLogin = styled.View`
 `;
 
 export const ImageLogo = styled.Image`
-  position: absolute;
-  top: 150px;
   width: 100px;
   height: 100px;
 `;

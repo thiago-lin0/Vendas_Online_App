@@ -4,14 +4,15 @@ import { View } from 'react-native';
 import Button from '../../../components/button/Buttos';
 import Input from '../../../components/input/Input';
 import { theme } from '../../../themes/theme';
+import { UseLogin } from '../hook/UseLogin';
 import { ContainerLogin, ImageLogo } from '../styles/login.style';
 // import Modal from '../../../components/modal/Modal';
 
 const Login = () => {
   // const [modalVisible, setModalVisible] = useState(false);
-  const handleClcik = async () => {
-    console.log('clicou');
-  };
+  const { email, password, error, loading, handleClcik, handleClickEmail, handleClickPassWord } =
+    UseLogin();
+
   return (
     <View>
       {/* <Modal
@@ -27,22 +28,29 @@ const Login = () => {
           resizeMode={'center'}
         />
         <Input
+          value={email}
           title={'E-mail :'}
           placeholder="Digite seu email"
           cursorColor={theme.colors.purpleTheme.purple80}
           margin={'0px 0px 10px 0px'}
+          errorMessage={error}
+          onChange={handleClickEmail}
         />
         <Input
           secureTextEntry
+          value={password}
           title={'Senha :'}
           placeholder="Digite sua senha"
           cursorColor={theme.colors.purpleTheme.purple80}
+          errorMessage={error}
+          onChange={handleClickPassWord}
         />
         <Button
           type={theme.buttons.buttonsTheme.primary}
           margin="16px"
           title="ENTRAR"
           onPress={handleClcik}
+          loading={loading}
         />
       </ContainerLogin>
     </View>
