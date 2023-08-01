@@ -2,11 +2,13 @@ import { useState } from 'react';
 import { NativeSyntheticEvent, TextInputChangeEventData } from 'react-native';
 
 import { useRequest } from '../../../hooks/useRequest';
+import { useUserReducer } from '../../../store/reducers/userReducers/useUserReducer';
 
 export const UseLogin = () => {
+  const { user } = useUserReducer();
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
-  const { loading, errorMessage, authRequest, user, setErrorMessage } = useRequest();
+  const { loading, errorMessage, authRequest, setErrorMessage } = useRequest();
 
   console.log('user', user);
   const handleClcik = async () => {

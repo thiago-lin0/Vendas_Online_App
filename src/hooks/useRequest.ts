@@ -3,12 +3,12 @@ import { useState } from 'react';
 import { connectApiPost } from '../conection/conectionApi';
 import { RequestLogin } from '../types/requestLogin';
 import { ReturnLogin } from '../types/returnLogin';
-import { UserType } from '../types/userType';
+import { useUserReducer } from '../store/reducers/userReducers/useUserReducer';
 
 export const useRequest = () => {
+  const { setUser } = useUserReducer(); //o dispatch está dentro desse hook
   const [loading, setLoading] = useState<boolean>(false);
   const [errorMessage, setErrorMessage] = useState<string>('');
-  const [user, setUser] = useState<UserType>();
 
   const authRequest = async (body: RequestLogin) => {
     setLoading(true);
@@ -28,6 +28,5 @@ export const useRequest = () => {
     errorMessage,
     setErrorMessage,
     authRequest,
-    user,
   };
 };
