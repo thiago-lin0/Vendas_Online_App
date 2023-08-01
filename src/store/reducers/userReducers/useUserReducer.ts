@@ -1,4 +1,5 @@
 import { useDispatch } from 'react-redux';
+
 import { UserType } from '../../../types/userType';
 import { useAppSelector } from '../../hooks';
 import { setUserAction } from '.';

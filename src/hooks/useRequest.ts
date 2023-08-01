@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 import { connectApiPost } from '../conection/conectionApi';
+import { useUserReducer } from '../store/reducers/userReducers/useUserReducer';
 import { RequestLogin } from '../types/requestLogin';
 import { ReturnLogin } from '../types/returnLogin';
-import { useUserReducer } from '../store/reducers/userReducers/useUserReducer';
 
 export const useRequest = () => {
   const { setUser } = useUserReducer(); //o dispatch está dentro desse hook
