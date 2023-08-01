@@ -1,3 +1,4 @@
+import { NavigationProp, ParamListBase, useNavigation } from '@react-navigation/native';
 import { useState } from 'react';
 
 import { connectApiPost } from '../conection/conectionApi';
@@ -7,6 +8,7 @@ import { RequestLogin } from '../types/requestLogin';
 import { ReturnLogin } from '../types/returnLogin';
 
 export const useRequest = () => {
+  const { navigate } = useNavigation<NavigationProp<ParamListBase>>();
   const { setUser } = useUserReducer(); //o dispatch está dentro desse hook
   const { setModal } = useGlobalReducer();
   const [loading, setLoading] = useState<boolean>(false);
@@ -17,6 +19,7 @@ export const useRequest = () => {
     await connectApiPost<ReturnLogin>('http://192.168.0.65:8080/auth', body)
       .then((result) => {
         setUser(result.user);
+        navigate('Home');
       })
       .catch(() => {
         setModal({
