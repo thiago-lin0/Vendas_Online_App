@@ -1,9 +1,9 @@
 import { useFonts } from 'expo-font';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import store from './store';
 import { Provider } from 'react-redux';
 
 import Login from './modules/login';
+import store from './store';
 
 const App = () => {
   const [fontsLoaded] = useFonts({

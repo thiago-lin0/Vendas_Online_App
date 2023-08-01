@@ -1,11 +1,10 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 import { connectApiPost } from '../conection/conectionApi';
+import { setUserAction } from '../store/reducers/userReducers';
 import { RequestLogin } from '../types/requestLogin';
 import { ReturnLogin } from '../types/returnLogin';
-import { UserType } from '../types/userType';
-import { useDispatch } from 'react-redux';
-import { setUserAction } from '../store/reducers/userReducers';
 
 export const useRequest = () => {
   const dispatch = useDispatch();
