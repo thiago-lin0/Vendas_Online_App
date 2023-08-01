@@ -1,12 +1,14 @@
 import { useState } from 'react';
 
 import { connectApiPost } from '../conection/conectionApi';
+import { useGlobalReducer } from '../store/reducers/globalReducers/useGlobalReducer';
 import { useUserReducer } from '../store/reducers/userReducers/useUserReducer';
 import { RequestLogin } from '../types/requestLogin';
 import { ReturnLogin } from '../types/returnLogin';
 
 export const useRequest = () => {
   const { setUser } = useUserReducer(); //o dispatch está dentro desse hook
+  const { setModal } = useGlobalReducer();
   const [loading, setLoading] = useState<boolean>(false);
   const [errorMessage, setErrorMessage] = useState<string>('');
 
@@ -17,7 +19,12 @@ export const useRequest = () => {
         setUser(result.user);
       })
       .catch(() => {
-        setErrorMessage('usuário ou senha inválidas');
+        setModal({
+          visible: true,
+          title: 'ERROR',
+          text: 'usuário ou senha inválidos',
+        });
+        // setErrorMessage('usuário ou senha inválidas');
       });
 
     setLoading(false);

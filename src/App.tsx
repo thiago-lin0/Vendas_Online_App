@@ -2,6 +2,7 @@ import { useFonts } from 'expo-font';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Provider } from 'react-redux';
 
+import GlobalModal from './components/modal/globalModal/globalModal';
 import Login from './modules/login';
 import store from './store';
 
@@ -22,6 +23,7 @@ const App = () => {
   return (
     <Provider store={store}>
       <SafeAreaView>
+        <GlobalModal />
         <Login />
       </SafeAreaView>
     </Provider>
