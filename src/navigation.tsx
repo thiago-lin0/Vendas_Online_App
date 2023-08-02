@@ -1,9 +1,9 @@
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
+import { MenuUrl } from './enums/menuUrl.enum';
 import Home from './modules/home';
 import Login from './modules/login';
-import { MenuUrl } from './enums/menuUrl.enum';
 
 const Stack = createNativeStackNavigator();
 

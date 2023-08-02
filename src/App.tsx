@@ -3,9 +3,8 @@ import { useFonts } from 'expo-font';
 import { Provider } from 'react-redux';
 
 import GlobalModal from './components/modal/globalModal/globalModal';
-
-import store from './store';
 import Navigation from './navigation';
+import store from './store';
 
 const App = () => {
   const [fontsLoaded] = useFonts({

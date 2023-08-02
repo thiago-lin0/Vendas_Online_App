@@ -1,13 +1,13 @@
 import { NavigationProp, ParamListBase, useNavigation } from '@react-navigation/native';
 import { useState } from 'react';
 
+import { MenuUrl } from '../enums/menuUrl.enum';
+import { setAuthorizationToken } from '../functions/conection/auth';
 import { connectApiPost } from '../functions/conection/conectionApi';
 import { useGlobalReducer } from '../store/reducers/globalReducers/useGlobalReducer';
 import { useUserReducer } from '../store/reducers/userReducers/useUserReducer';
 import { RequestLogin } from '../types/requestLogin';
 import { ReturnLogin } from '../types/returnLogin';
-import { MenuUrl } from '../enums/menuUrl.enum';
-import { setAuthorizationToken } from '../functions/conection/auth';
 
 export const useRequest = () => {
   const { reset } = useNavigation<NavigationProp<ParamListBase>>();
