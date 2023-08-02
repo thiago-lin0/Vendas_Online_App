@@ -1,13 +1,11 @@
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useFonts } from 'expo-font';
 // import { SafeAreaView } from 'react-native-safe-area-context';
 import { Provider } from 'react-redux';
 
 import GlobalModal from './components/modal/globalModal/globalModal';
-import Home from './modules/home';
-import Login from './modules/login';
+
 import store from './store';
+import Navigation from './navigation';
 
 const App = () => {
   const [fontsLoaded] = useFonts({
@@ -23,16 +21,10 @@ const App = () => {
     return null;
   }
 
-  const Stack = createNativeStackNavigator();
   return (
     <Provider store={store}>
       <GlobalModal />
-      <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen name="Login" component={Login} />
-          <Stack.Screen name="Home" component={Home} />
-        </Stack.Navigator>
-      </NavigationContainer>
+      <Navigation />
     </Provider>
   );
 };
