@@ -1,9 +1,11 @@
 import { useFonts } from 'expo-font';
-import { SafeAreaView } from 'react-native-safe-area-context';
+// import { SafeAreaView } from 'react-native-safe-area-context';
 import { Provider } from 'react-redux';
 
-import Login from './modules/login';
+import GlobalModal from './components/modal/globalModal/globalModal';
+
 import store from './store';
+import Navigation from './navigation';
 
 const App = () => {
   const [fontsLoaded] = useFonts({
@@ -21,9 +23,8 @@ const App = () => {
 
   return (
     <Provider store={store}>
-      <SafeAreaView>
-        <Login />
-      </SafeAreaView>
+      <GlobalModal />
+      <Navigation />
     </Provider>
   );
 };
